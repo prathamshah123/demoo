@@ -1,0 +1,90 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter create --template app --overwrite .
+
+## exception
+
+FileSystemException: FileSystemException: Cannot open file, path = 'C:\flutter_windows_3.3.2-stable\flutter\packages\flutter_tools\templates\template_manifest.json' (OS Error: The system cannot find the path specified.
+, errno = 3)
+
+```
+#0      _File.throwIfError (dart:io/file_impl.dart:635:7)
+#1      _File.openSync (dart:io/file_impl.dart:479:5)
+#2      _File.readAsBytesSync (dart:io/file_impl.dart:539:18)
+#3      _File.readAsStringSync (dart:io/file_impl.dart:584:18)
+#4      ForwardingFile.readAsStringSync (package:file/src/forwarding/forwarding_file.dart:96:16)
+#5      ErrorHandlingFile.readAsStringSync.<anonymous closure> (package:flutter_tools/src/base/error_handling_io.dart:222:22)
+#6      _runSync (package:flutter_tools/src/base/error_handling_io.dart:597:14)
+#7      ErrorHandlingFile.readAsStringSync (package:flutter_tools/src/base/error_handling_io.dart:221:12)
+#8      CreateBase._computeTemplateManifest (package:flutter_tools/src/commands/create_base.dart:690:37)
+#9      CreateBase._templateManifest (package:flutter_tools/src/commands/create_base.dart:677:43)
+#10     CreateBase._templateManifest (package:flutter_tools/src/commands/create_base.dart)
+#11     CreateBase.renderMerged (package:flutter_tools/src/commands/create_base.dart:486:25)
+#12     CreateBase.generateApp (package:flutter_tools/src/commands/create_base.dart:511:29)
+#13     CreateCommand.runCommand (package:flutter_tools/src/commands/create.dart:314:37)
+<asynchronous suspension>
+#14     FlutterCommand.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command.dart:1209:27)
+<asynchronous suspension>
+#15     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:150:19)
+<asynchronous suspension>
+#16     CommandRunner.runCommand (package:args/command_runner.dart:209:13)
+<asynchronous suspension>
+#17     FlutterCommandRunner.runCommand.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:281:9)
+<asynchronous suspension>
+#18     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:150:19)
+<asynchronous suspension>
+#19     FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:229:5)
+<asynchronous suspension>
+#20     run.<anonymous closure>.<anonymous closure> (package:flutter_tools/runner.dart:62:9)
+<asynchronous suspension>
+#21     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:150:19)
+<asynchronous suspension>
+#22     main (package:flutter_tools/executable.dart:91:3)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, 3.3.2, on Microsoft Windows [Version 10.0.22000.918], locale en-IN)
+    • Flutter version 3.3.2 on channel stable at C:\flutter_windows_3.3.2-stable\flutter
+    • Upstream repository https://github.com/flutter/flutter.git
+    • Framework revision e3c29ec00c (4 weeks ago), 2022-09-14 08:46:55 -0500
+    • Engine revision a4ff2c53d8
+    • Dart version 2.18.1
+    • DevTools version 2.15.0
+
+[✗] Android toolchain - develop for Android devices
+    ✗ Unable to locate Android SDK.
+      Install Android Studio from: https://developer.android.com/studio/index.html
+      On first launch it will assist you in installing the Android SDK components.
+      (or visit https://flutter.dev/docs/get-started/install/windows#android-setup for detailed instructions).
+      If the Android SDK has been installed to a custom location, please use
+      `flutter config --android-sdk` to update to that location.
+
+
+[✓] Chrome - develop for the web
+    • Chrome at C:\Program Files\Google\Chrome\Application\chrome.exe
+
+[✗] Visual Studio - develop for Windows
+    ✗ Visual Studio not installed; this is necessary for Windows development.
+      Download at https://visualstudio.microsoft.com/downloads/.
+      Please install the "Desktop development with C++" workload, including all of its default components
+
+[!] Android Studio (not installed)
+    • Android Studio not found; download from https://developer.android.com/studio/index.html
+      (or visit https://flutter.dev/docs/get-started/install/windows#android-setup for detailed instructions).
+
+[✓] Connected device (3 available)
+    • Windows (desktop) • windows • windows-x64    • Microsoft Windows [Version 10.0.22000.918]
+    • Chrome (web)      • chrome  • web-javascript • Google Chrome 106.0.5249.119
+    • Edge (web)        • edge    • web-javascript • Microsoft Edge 105.0.1343.33
+
+[✓] HTTP Host Availability
+    • All required HTTP hosts are available
+
+! Doctor found issues in 3 categories.
+```
